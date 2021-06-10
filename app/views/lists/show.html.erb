@@ -17,8 +17,8 @@
                     </h5>
                     <p class="card-text"><%= movie.overview%></p>
                     <p class="text-muted">Created <%= time_ago_in_words(bookmark.created_at)%></p>
-                    <button class="btn btn-danger sweet-alert-demo">Delete</button>
-                    <%= link_to "", bookmark_path(bookmark), method: :delete, class:"hidden delete-movie" %>
+                    <button class="btn btn-danger">Delete</button>
+                    <%= link_to "", bookmark_path(bookmark), method: :delete, class:"hidden" %>
                 </div>
             </div>
         </div>

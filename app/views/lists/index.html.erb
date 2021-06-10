@@ -16,8 +16,8 @@
                             <h5 class="card-title"><%= list.name %></h5>
                             <p class="text-muted">Created <%= time_ago_in_words(list.created_at)%></p>
                             <div class="d-flex justify-content-between">
-                            <button class="btn btn-danger sweet-alert-demo">Delete</button>
-                            <%= link_to "" , list_path(list), method: :delete, class: "hidden delete-list"%>
+                            <button class="btn btn-danger">Delete</button>
+                            <%= link_to "" , list_path(list), method: :delete, class: "hidden"%>
                             <%= link_to "More" , list_path(list), class:"btn btn-info"%>
                             </div>
                         </div>

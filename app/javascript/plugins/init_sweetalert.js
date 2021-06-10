@@ -5,7 +5,7 @@ const initSweetalert = (selector, options = {}, callback = () => {}) => {
   if (swalButton) { // protect other pages
     swalButton.forEach((button) => {
       button.addEventListener('click', (event) => {
-        event.currentTarget.classList.add("here")
+        event.target.id = "sweet-alert-demo"
         swal(options).then(callback);
       });
     })

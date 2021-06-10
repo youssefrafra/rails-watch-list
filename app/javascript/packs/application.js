@@ -11,30 +11,18 @@ import 'bootstrap';
 import { initSweetalert } from '../plugins/init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
-    initSweetalert('.sweet-alert-demo', {
+    initSweetalert('.btn-danger', {
         title: "Alert",
-        text: "Once deleted, you will not be able to recover this List!",
+        text: "Are you sure you want to delete this ?",
         icon: "warning",
         buttons: true,
         dangerMode: true
       },(value) => {
         if (value) {
-            const link = document.querySelector('.delete-list');
+            const button = document.querySelector('#sweet-alert-demo');
+            const link = button.nextElementSibling
+            button.id = "";
             link.click();
-        }
-      });
-    initSweetalert('.sweet-alert-demo', {
-        title: "Alert",
-        text: "Are you sure you want to delete this movie ?",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true
-      },(value) => {
-          console.log(opt)
-        if (value) {
-            const link = document.querySelector('.delete-movie');
-            link.click();
-            console.log(event.target)
         }
       });
   });

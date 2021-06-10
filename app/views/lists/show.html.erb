@@ -1,0 +1,27 @@
+<%= render  "layouts/background-img" %>
+<div class="container">
+<h1><%= @list.name%></h1>
+<%= link_to  "Add Movie", new_list_bookmark_path(@list), class:"btn btn-success" %>
+<br/>
+<br/>
+<div class="row">
+    <% @list.movies.each do |movie|%>
+        <div class="col-3" style="margin-top:20px">
+            <div class="card" style="width: 15rem">
+                <%bookmark = Bookmark.find_by(list: @list,movie: movie)  %>
+                <img src=<%=movie.poster_url%>  class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                    <%= movie.title%> &bull; <i class="fas fa-star" style="color:gold"></i>
+                    <%= movie.rating %>
+                    </h5>
+                    <p class="card-text"><%= movie.overview%></p>
+                    <p class="text-muted">Created <%= time_ago_in_words(bookmark.created_at)%></p>
+                    <button class="btn btn-danger sweet-alert-demo">Delete</button>
+                    <%= link_to "", bookmark_path(bookmark), method: :delete, class:"hidden delete-movie" %>
+                </div>
+            </div>
+        </div>
+        <br/>
+    <%end%>
+</div>

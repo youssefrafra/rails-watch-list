@@ -9,7 +9,7 @@
     <br/>
     <div class="row">
         <% @lists.each do |list|%>
-                <div class="col-lg-5 ">
+                <div class="col-lg-6 ">
                     <div class="card mb-4" style="width: 25rem;">
                         <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill,class:"card-img-top" %>
                         <div class="card-body">

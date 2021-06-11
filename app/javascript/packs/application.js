@@ -11,7 +11,7 @@ import 'bootstrap';
 import { initSweetalert } from '../plugins/init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
-    initSweetalert('.btn-danger', {
+    initSweetalert('.btn-outline-danger', {
         title: "Alert",
         text: "Are you sure you want to delete this ?",
         icon: "warning",

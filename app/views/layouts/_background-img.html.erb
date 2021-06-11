@@ -1,9 +1,9 @@
-<div style='height:60vh;
+<div style="height:60vh;
             width:100%;
-            background-image:url(<%= image_url %>);
+            background-image:url('<%= cl_image_path key, crop: :fill %>');
             background-size:cover;
             background-position: center;
-            color:white;'
+            color:white;"
     class="d-flex justify-content-center align-items-center">
-    <h1>Save any kind of movies</h1>
+    <h1><%= text %></h1>
 </div>

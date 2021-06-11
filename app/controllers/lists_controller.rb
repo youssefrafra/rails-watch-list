@@ -19,6 +19,16 @@ class ListsController < ApplicationController
       render :new
     end
   end
+  
+  def edit
+    @list = List.find(params[:id])
+  end
+
+  def update
+    @list = List.find(params[:id])
+    @list.update(list_params)
+    redirect_to lists_path
+  end
 
   def destroy
     @list = List.find(params[:id])
@@ -29,6 +39,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 end

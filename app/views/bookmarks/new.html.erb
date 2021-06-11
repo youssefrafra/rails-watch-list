@@ -2,7 +2,7 @@
     <%= simple_form_for [@list,@bookmark] do |f| %>
     <%= f.input :comment %>
     <%= f.association :movie %>
-    <%= f.submit class:"btn btn-success"%>
+    <%= f.submit "Add movie", class:"btn btn-success"%>
     <% end %>
     <br/>
     <%= link_to  "Back", list_path(@list), class:"btn btn-dark" %>

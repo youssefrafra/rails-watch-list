@@ -1,4 +1,4 @@
-<%= render  "layouts/background-img" %>
+<%= render  "layouts/background-img", image_url: "https://harborhonolulu.org/wp-content/uploads/2019/05/movie-theater-background.jpg" %>
 <br/>
 <div class="container">
     <div class="d-flex justify-content-between align-items-center">
@@ -10,12 +10,12 @@
     <div class="row">
         <% @lists.each do |list|%>
                 <div class="col-4">
-                    <div class="card" style="width: 20rem;heigth:20rem">
+                    <div class="card mb-4" style="width: 25rem;">
                         <%= image_tag 'movie-theater', alttext: "text", class:"card-img-top" %>
                         <div class="card-body">
                             <h5 class="card-title"><%= list.name %></h5>
-                            <p class="text-muted">Created <%= time_ago_in_words(list.created_at)%></p>
-                            <div class="d-flex justify-content-between">
+                            <small class="text-muted">Created <%= time_ago_in_words(list.created_at) %> ago</small>
+                            <div class="d-flex justify-content-between pt-3">
                             <button class="btn btn-danger">Delete</button>
                             <%= link_to "" , list_path(list), method: :delete, class: "hidden"%>
                             <%= link_to "More" , list_path(list), class:"btn btn-info"%>

@@ -4,8 +4,10 @@ class ListsController < ApplicationController
   end
 
   def show
+    # raise
     @list = List.find(params[:id])
     @review = Review.new
+    # raise
   end
 
   def new

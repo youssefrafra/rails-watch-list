@@ -43,16 +43,12 @@
     <%end%>
     <div class="d-flex justify-content-between" style="width:100%;">
         <div id="reviews">
-            <%# <% @list.reviews.each do |review|%> %>
-            <%# <p><%= review.comment%></p> %>
-            <%# <%end %> %>
             <%= "Comming soon" %>
         </div>
         <div id="reviews-form" style="width:50%;">
                 <h1><%= @list.name %></h1>
                 <br/>
                 <%= simple_form_for [@list,@review] do |f| %>
-                <%# <%= f.collection_radio_buttons :rating, [[1, 'Bad'] ,[2, 'Ok'], [3, 'Great'], [4, 'Very Nice'], [5, 'Wonderfull']], :first, :last %>
                 <%= f.input :comment %>
                 <%= f.input :rating %>
                 <%= f.submit "Add review", class:"btn btn-success"%>
